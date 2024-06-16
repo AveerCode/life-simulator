@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Simulator</title>
+    <style>
+        /* Resetting default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Body styles */
+        body { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            background-color: #f0f0f0; /* Light gray background */
+            font-family: Arial, sans-serif; 
+        }
+        
+        /* Simulator container styles */
+        .simulator { 
+            width: 90%; /* Take 90% of the viewport width */
+            max-width: 400px; /* Maximum width of 400px */
+            padding: 20px; 
+            background: #fff; /* White background */
+            border-radius: 10px; 
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
+            text-align: center; 
+        }
+        
+        /* Title styles */
+        .simulator h1 {
+            margin-bottom: 20px; /* Space below the title */
+            color: #007BFF; /* Blue title color */
+        }
+        
+        /* Paragraph styles */
+        .simulator p {
+            margin-bottom: 20px; /* Space below the paragraph */
+            color: #333; /* Dark gray text color */
+        }
+        
+        /* Button styles */
+        .btn { 
+            display: inline-block; 
+            width: 100%; 
+            padding: 10px; 
+            background: #007BFF; /* Blue button background */
+            border: none; 
+            color: #fff; /* White button text color */
+            cursor: pointer; 
+            border-radius: 5px; 
+            transition: background 0.3s; 
+        }
+        
+        .btn:hover { 
+            background: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="simulator">
+        <h1>Life Simulator</h1>
+        <p id="life-status">Welcome to Life Simulator!</p>
+        <button class="btn" onclick="changeEvent()">Next Event</button>
+    </div>
+    <script>
+        const events = [
+            'You got a new job!',
+            'You moved to a new city.',
+            'You found a new hobby.',
+            'You made a new friend.',
+            'You got promoted at work.',
+            'You went on a vacation.',
+            'You adopted a pet.',
+            'You started a new course.',
+            'You bought a new house.',
+            'You achieved a personal goal.'
+        ];
+
+        function changeEvent() {
+            const eventIndex = Math.floor(Math.random() * events.length);
+            document.getElementById('life-status').innerText = events[eventIndex];
+        }
+    </script>
+</body>
+</html>
